@@ -1,0 +1,38 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+
+	</head>
+
+	<body>
+		<script type="text/javascript">
+
+			var scope = "global";
+
+			function checkscope(){
+				scope = "local";
+				myscope = "local";
+				return [scope,myscope];   //->local,local
+			}
+
+			alert (checkscope());  //
+			//alert('a');
+
+
+			function checkscope2(){
+				var scope ="local scope";
+				function nested (){
+					var scope = "nested scope";
+					return scope;
+				}
+				return nested();
+			}
+
+			alert(checkscope2());
+		</script>
+
+	</body>
+
+</html>
