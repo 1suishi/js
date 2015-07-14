@@ -1,0 +1,33 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+
+	</head>
+
+	<body>
+		<script type="text/javascript">
+
+			function f(x){
+				if(x<0){
+					throw new Error("x can't be negtive");
+				}
+				return x;
+			}
+
+			try{
+				var n = Number(prompt("请输入一个整数",""));
+				var a = f(n);
+				alert(a);
+			}catch(e){
+				alert(e);
+			}
+
+			
+
+		</script>
+
+	</body>
+
+</html>
