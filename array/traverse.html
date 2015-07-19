@@ -1,0 +1,41 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+
+	</head>
+
+	<body>
+		<script type="text/javascript">
+
+		/* 1, 使用for循环
+		 * 	Object.key
+		 */
+
+		
+			var a =[1,2,3,,4];
+
+			var keys = Object.keys(a)  //得到索引值
+
+			alert(keys);  //->0,1,2,4 没有3
+
+			for(var i=0,len = keys.length;i<len ;i++){
+				console.log(a[keys[i]]);
+			}
+
+		
+		/* 2, 使用for/in
+		 * 
+		 */
+
+		 for(var i in a){
+		 	console.log(a[i]);
+		 }
+
+
+		</script>
+
+	</body>
+
+</html>
