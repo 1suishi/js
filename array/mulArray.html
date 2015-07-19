@@ -1,0 +1,43 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+
+	</head>
+
+	<body>
+		<script type="text/javascript">
+
+			//9*9 乘法表
+			var table =  new Array(10);
+			for(var i=0; i<table.length; i++){
+				table[i] = new Array(10);
+			}
+			
+
+			for(var row =0; row<table.length; row++){
+
+				for (var col =0;col < table[row].length;col++){
+					table[row][col] = row*col;
+				}
+				
+			}
+
+			// for(var row =0; row<table.length; row++){
+			// 	for (var col =0;col < table[row].length;col++){
+			// 		console.log(table[row][col]);
+			// 	}
+				
+			// }
+
+			alert(table[5][7]);
+
+
+
+
+		</script>
+
+	</body>
+
+</html>
