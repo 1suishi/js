@@ -1,0 +1,26 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+
+	</head>
+
+	<body>
+		<script type="text/javascript">
+				
+				var func=new function(){this.a="func"}
+			    var myfunc=function(x){
+			        var a="myfunc";
+			        alert(this.a);
+			        alert(x);
+			    }
+			    myfunc.call(func,"var");   // func var
+
+				
+				
+		</script>
+
+	</body>
+
+</html>
