@@ -1,0 +1,36 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+
+	</head>
+
+	<body>
+		<script type="text/javascript">
+				
+				"use strict";
+
+				function obj(){
+					this.value = "object"
+				}
+				var value = "global value";
+				function f(){
+					alert(this.value);
+				}
+
+				//f();
+				window.f();
+
+				f.call(window);
+				f.call(new obj);
+
+				f.apply(window);
+				f.apply(new obj);
+				
+				
+		</script>
+
+	</body>
+
+</html>
