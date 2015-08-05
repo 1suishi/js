@@ -1,0 +1,38 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+
+	</head>
+
+	<body>
+		<script type="text/javascript">
+		//"use strict"
+			
+
+			Number.prototype.times =  function (f,context){
+
+				var n = Number(this);
+				for(var i=0;i<n;i++){
+					alert(context);
+					
+					f.call(context,i);
+				}
+				
+			}
+
+			var n = 3;
+			n.times(
+				function(n){console.log(n+ "hello")},
+				window
+				
+			);
+
+
+
+		</script>
+
+	</body>
+
+</html>
