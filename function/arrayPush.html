@@ -1,0 +1,42 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+
+	</head>
+
+	<body>
+		<script type="text/javascript">
+		//"use strict"
+
+			var arr1= [1,3,5];
+			var arr2 =[2,4,6];
+
+			var arr3 =arr1;
+
+			// for(var i=0;i<arr2.length;i++){
+			// 	arr3.push(arr2[i]);
+			// }
+
+			// console.log(arr3);
+
+			var arr4 = arr1;
+			arr4.push.apply(this,arr2);
+			console.log(arr4);
+
+			//var arr5 = arr1;
+			// console.log(arr5);
+			// Array.prototype.push.apply(arr5,arr2);
+			// console.log(arr5);
+
+
+
+
+
+
+		</script>
+
+	</body>
+
+</html>
