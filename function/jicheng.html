@@ -1,0 +1,46 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+
+	</head>
+
+	<body>
+		<script type="text/javascript">
+		//"use strict"
+
+		  function Parent(hello){ 
+		    this.hello = hello; 
+		  } 
+		  Parent.prototype.sayHello = function(){ 
+		    alert(this.hello); 
+		  } 
+
+		  function Child(hello,world){ 
+		    Parent.call(this,hello);//将父类的属性继承过来 
+		    this.world = world;//新增一些属性 
+		  } 
+
+		  Child.prototype = new Parent();//将父类的方法继承过来 
+
+		  Child.prototype.sayWorld = function(){//新增一些方法 
+		    alert(this.world); 
+		  } 
+
+		  var c = new Child("zhangsan","lisi"); 
+		  c.sayHello(); 
+		  c.sayWorld();
+
+		  console.log(new Child);
+
+
+
+
+
+
+		</script>
+
+	</body>
+
+</html>
