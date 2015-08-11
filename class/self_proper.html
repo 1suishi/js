@@ -1,0 +1,55 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+
+	</head>
+
+	<body>
+		<script type="text/javascript">
+		//"use strict"
+
+		 
+		function Person(){
+
+		}
+
+		Person.prototype.name = "Nicholas";
+		Person.prototype.job = "Software";
+		Person.prototype.sayName  = function(){
+			alert(this.name);
+		}
+		Person.prototype.setName= function(name){
+			this.name = name;
+		}
+
+		var person1 = new Person();
+		var person2 = new Person();
+
+		person1.sayName();
+		person2.sayName();
+
+
+		person1.name = "Gerg";
+		person1.sayName();
+
+		person1.setName("lzw");
+		person2.setName('fdf');
+
+
+		console.log(person1);
+		console.log(person2);
+
+
+
+
+
+
+
+
+		</script>
+
+	</body>
+
+</html>
