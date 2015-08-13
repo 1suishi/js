@@ -1,0 +1,38 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+
+	</head>
+
+	<body>
+		<script type="text/javascript">
+		//"use strict"
+
+		function create(original){
+			var clone = Object.create(original);
+			clone.sayHi = function(){
+				alert("hi");
+			}
+			return clone;
+		}
+
+		var person = {
+			name:"lzw",
+			friends : [1,2,3],
+		}
+
+		var p = create(person);
+
+		p.sayHi();
+		console.log(p);
+		console.log(p.name);
+	
+		
+
+		</script>
+
+	</body>
+
+</html>
