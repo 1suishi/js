@@ -1,0 +1,39 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+
+	</head>
+
+	<body>
+		<script type="text/javascript">
+		//"use strict"
+
+			
+			function Super(){
+				this.color =["red","blue"];
+			}
+
+			function suber(){
+				Super.call(this);
+			}
+
+			//(Super.color === suber.color);
+			var sup = new Super();
+			var sub = new suber
+
+			sub.color.push('green');
+
+			console.log(sup);
+			console.log(sub);
+
+			alert(sub.color === sup.color);
+
+			
+
+		</script>
+
+	</body>
+
+</html>
