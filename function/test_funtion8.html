@@ -1,0 +1,33 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+
+	</head>
+
+	<body>
+		<script type="text/javascript">
+		//"use strict"
+
+			
+			var Chinese ={
+				nation:[1,2,3],
+			}
+			// var Doctor = {
+			// 	career: "医生"，
+			// }
+
+			var Doctor  = Object.create(Chinese);
+			Doctor.career = "医生";
+			Doctor.nation.push(4);
+
+			alert(Doctor.nation);
+
+			
+
+		</script>
+
+	</body>
+
+</html>
