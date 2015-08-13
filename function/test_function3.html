@@ -1,0 +1,31 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+
+	</head>
+
+	<body>
+		<script type="text/javascript">
+		//"use strict"
+		function person(name,age,job){
+			var o = new Object();
+			o.name = name;
+			o.age = age;
+			o.job = job;
+			o.sayName = function(){
+				alert(this.name);
+			}
+			return o;
+		}
+
+		var friends = new person("lzw",25,1);
+		console.log(friends);
+		friends.sayName();
+
+		</script>
+
+	</body>
+
+</html>
