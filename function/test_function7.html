@@ -1,0 +1,92 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+
+	</head>
+
+	<body>
+		<script type="text/javascript">
+		//"use strict"
+
+		
+		var person = function(name,friends){
+			this.name= name;
+			this.friends = friends;
+			
+		};
+		person.prototype.sayName = function(){
+			return this.name;
+		}
+
+		// var p = new person("lzw",[1,2,3]);
+
+		// alert(p.sayName());
+		// console.log(p);
+
+		var child = function(name,friends,age){
+			person.call(this,name,friends);
+			this.age = age;
+		}
+
+
+		//1，继承person实例
+
+		//child.prototype = new person();
+
+
+
+		//2,继承类原型
+			//这么做有问题，减 问题部分
+
+		child.prototype = person.prototype;
+		child.prototype.constructor= child;
+		child.prototype.sayFriends  = function(){
+			return this.friends;
+		}
+
+		//问题部分  改变了父类的原型函数
+		/*
+
+		var p = new person("a",[1.3]);
+		alert(p.sayFriends());
+		*/
+
+
+
+		//改变person的原型，child原型不变
+
+		//person.prototype = {};
+
+
+
+
+		//3,寄生式继承
+
+		/*var f = function(){};
+		f.prototype = person.prototype;
+		var p = new f();
+		child.prototype = p;
+		*/
+
+		//4,寄生式继承 使用Object.create
+		/*
+
+		var pro = Object.create(person.prototype);
+		child.prototype = pro;
+		child.prototype.constructor = child;
+		*/
+		
+
+		var c = new child("lzw",[1,2,3],25);
+		console.log(c);
+
+		alert(c.sayName());
+		alert(c.sayFriends());
+
+		</script>
+
+	</body>
+
+</html>
