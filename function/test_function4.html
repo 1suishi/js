@@ -17,13 +17,13 @@
 		}
 
 		
-		//这个方法正确
+		//对象
 		var per = {
 			name:"dfd",
 			age:15,
 		}
 
-		// 这种方法错误会有错误
+		// 构造函数
 		var person = function(){
 			this.name="kze";
 			this.friends = [1,2,3];
@@ -35,12 +35,13 @@
 
 		var p = object(per);
 
-		var p2 = object(person);
+		var p2 = object(new person);
 		console.log(p2);
 
 		console.log(p)
 		
 		console.log(p.name);
+		console.log(p2.name);
 
 		</script>
 
