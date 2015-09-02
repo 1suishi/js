@@ -1,0 +1,127 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+
+	</head>
+
+	<body>
+		<script type="text/javascript">
+
+			var arr = [1,2,2,3,3,6,5,3,4,4,2];
+			/*
+				1,indexOf
+			*/
+			function unique1(arr){
+				var n=[];
+				for(var i=0;i<arr.length;i++){
+					if(n.indexOf(arr[i]) == -1){
+						n.push(arr[i]);
+					}
+				}
+				return n;
+
+			}
+			/*
+				有些不支持indexOf
+			*/
+			if(!Array.prototype.indexOf){
+				Array.prototype.indexOf = function(item){
+					var result = -1;
+					if(this.length ==0){
+						return result;
+					}
+					for(i=0;i<this.length;i++){
+						if(this[i] ===item){
+							result= i;
+							break;
+						}
+					}
+					return result;
+				}
+			}
+
+			/*
+
+				2, {}
+				新建一js对象以及新数组，遍历传入数组时，判断值是否为js对象的键，不是的话给对象新增该键并放入新数组。注意点： 判断是否为js对象键时，会自动对传入的键执行“toString()”，不同的键可能会被误认为一样；例如： a[1]、a["1"] 。因此将
+				对象的类型加入名字中
+
+			*/
+			function unique2(arr){
+
+				var n={};
+				var r=[];
+				var type;
+				for(var i=0;i<arr.length;i++){
+					type = (typeof arr[i])+arr[i];
+					if(!n[type]){
+						n[type] = 1 ;
+						r.push(arr[i]);
+					}
+				}
+				return r;
+			}
+
+			/*
+				数组下标判断法
+			*/
+			function unique3(arr){
+				var r=[];
+				for(var i=0;i<arr.length;i++){
+					if(arr.indexOf(arr[i]) ===i ){
+
+						r.push(arr[i]);
+					}
+				}
+				return r;
+			}
+
+			/*
+				排序后相邻去除法
+			*/
+			function unique4(arr){
+				arr.sort();
+				var r=[];
+				//r.push(arr[0]);
+				for(var i=0;i<arr.length;i++){
+					if(arr[i] !== r[r.length-1]){
+						r.push(arr[i]);
+					}
+				}
+				return r;
+			}
+
+
+			/*
+				优化遍历数组法
+			*/
+			function unique5(arr){
+
+				var r= [];
+
+				for(var i=0;i<arr.length;i++){
+					for(var j=i+1;j<arr.length;j++){
+						//console.log(j);
+						if(arr[i] ===arr[j]){
+							j= ++i;   //后面存在arr[i] ,i++, 去后面的值
+						}
+
+					}
+					
+					r.push(arr[i]);
+				}
+				return r;
+
+			}
+
+			var n=unique5(arr);
+			console.log(n);
+
+			//alert('a');
+		</script>
+
+	</body>
+
+</html>
