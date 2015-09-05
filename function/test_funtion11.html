@@ -1,0 +1,44 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+
+    </head>
+
+    <body>
+        <script type="text/javascript">
+        //"use strict"
+
+          function person(name,age){
+            var o =new Object();
+            o.name = name;
+            o.age = age;
+            o.color = [1,2,3];
+            o.sayName = function(){
+              alert(this.name);
+            }
+            return o
+          }
+
+          var friend =  person("lzw",25);
+          friend.sayName();
+
+          var f2 =  person("lz",3);
+          f2.color.push(4);
+          f2.sayName();
+
+          console.log(friend);
+          console.log(f2);
+
+        </script>
+
+    </body>
+
+</html>
+
+
+
+
+
+

@@ -25,7 +25,9 @@
 
 		function enumeration(namesToValues) {
 		    // This is the dummy constructor function that will be the return value.
-		    var enumeration = function() { throw "Can't Instantiate Enumerations"; };
+		    var enumeration = function() { 
+		    	//throw "Can't Instantiate Enumerations"; 
+		    };
 
 		    // Enumerated values inherit from this object.
 		    var proto = enumeration.prototype = {
@@ -53,6 +55,9 @@
 		    // Return the constructor that identifies the new type
 		    return enumeration;
 		}
+
+
+		console.log(enumeration);
 
 
 		

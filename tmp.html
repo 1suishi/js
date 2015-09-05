@@ -1,0 +1,107 @@
+<?php 
+    //error_reporting(E_ALL^E_NOTICE);
+
+error_reporting(E_ALL);
+
+?>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="format-detection" content="telephone=no"/>
+        <title>活动介绍</title>
+
+        <style>
+            body{font-size: 14px; margin: 0px;  background-color: #f1f1f1;}
+            .activityCard{/*border-radius:5px;*/ margin:0 px;  position: relative;}
+            .activityCard i{font-style: normal;}
+            
+            .activityCard .intro1 {position:relative;top:40px; text-align: center;vertical-align: center; color:white;font-size: 18px;background-color: #000}
+            .activityCard .intro2 {position:relative;top:50px; text-align: center;vertical-align: center; color:white;font-size: 18px;background-color: #000}
+            
+            .content {border:solid 1px #000;margin-top:10px}
+            
+            .content .content_first {text-align: center;/*padding: 20px 10%;margin:20px auto;*/font-size: 16px}
+        </style>
+        <script type="text/javascript" charset="utf-8" >
+
+
+            window.onload = function(){
+                var divs = document.getElementById("activityCard");
+
+                hei = 372 * (divs.offsetWidth) / 710;
+
+                divs.style.height= hei + 'px';//设置宽度
+                //
+                //
+                var ps = document.getElementsByClassName("content");
+                for(var i=0;i<ps.length;i++){
+                  
+                    wid = ps[i].offsetWidth * 0.03;
+                    //alert(wid);
+                    ps[i].style.margin ="10px "+wid+"px";
+                }
+                    //change bg
+                    //divs[i]
+                
+            }  
+        </script>
+        <script type="text/javascript">
+        var ios = (/iphone|ipad/gi).test(navigator.appVersion)
+        function setInfo(o){
+                 //var t = $(o).attr('data_type');
+                 //alert(t);
+                if(!ios){
+                    if(typeof obj != 'undefined'){
+                            obj.checkUserInfo(o);
+                    }
+                }else{
+                    window.location.href="dadaios://checkUserInfo?"+o;
+                } 
+        }
+        </script>
+
+    </head>
+
+    <body leftmargin=0 topmargin=0 oncontextmenu='return false' ondragstart='return false' onselectstart ='return false' onselect='document.selection.empty()' oncopy='document.selection.empty()' onbeforecopy='return false' onmouseup='document.selection.empty()'>
+        <!--40 #3bb159 15 #26a9da   6:#f78c24 1:#f75f47-->
+        
+        <div class="activityCard" id="activityCard" style="background: url(http://182.92.156.94/img/1.jpg) no-repeat 0 center; background-size:100% 100%;">
+            <p class="intro1">别的网站总是喊你留下，但不给任何好吃；</p>
+            <p class="intro2">我们给你一台车，青春短暂，上车再聊！</p>
+        </div>
+        <div class="content" >
+            <p class="content_first"> 如何让自己成为搭搭顺风车明星？ <br/>
+                <span style="font-size:12px;">很简单，注册搭搭顺风车上传美照！<span/>
+                </p>
+            
+        </div>
+        
+         <div class="content" >
+            <p class="content_first"> 如果注册那天不幸遇到太多美丽的人 <br/>以至于没能入选呢？<br/>
+                <span style="font-size:12px;">到以下六家合作APP领取绿色通道名额，So eassy<span/>
+                </p>
+            
+        </div>
+        
+         <div >
+             <ul style="list-style-type: none;display:inline">
+                 <li>
+                      <img  style="width: 20%" src="http://182.92.156.94/img/1.jpg"/>
+                 </li>
+                  <li>
+                      <img  style="width: 20%" src="http://182.92.156.94/img/1.jpg"/>
+                 </li>
+                  <li>
+                      <img  style="width: 20%" src="http://182.92.156.94/img/1.jpg"/>
+                 </li>
+             </ul>
+             
+            
+        </div>
+            
+        </div>
+
+    </body>
+</html>

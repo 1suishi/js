@@ -1,0 +1,74 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+
+	</head>
+
+	<body>
+		<script type="text/javascript">
+
+
+			var x = 10;
+			function func(){
+				alert(this.x);
+			};
+
+			// func();  //10
+
+			var obj ={
+				x:20,
+				fn: function(){
+					alert(this.x);
+					console.log(this);
+				}
+			};
+
+			// obj.fn();  //20
+
+			var fn = obj.fn;
+
+			//func(); //10
+			//fn(); //10    this->window
+			//obj.fn(); //20  this->Object
+
+			//alert(fn ==obj.fn);  //true
+			//alert(fn ===obj.fn);  //true
+
+
+
+			//alert('a');
+		</script>
+
+
+
+
+		<div id="nav" onclick="getId()">ddd</div>
+		<div id="nav1" onclick="getId()">ddd</div>
+		<script type="text/javascript">
+
+
+
+			/*
+				下面的getId 相当于
+				var div =document.getElementById("nav");
+				div.onclick=  function(){
+					getId();
+				}
+				此时 getId 所在的匿名函数里this 指向 div，但是 getId 自身this不是
+			*/
+			function getId(){
+				alert(this.id);   //undefined
+			}
+
+			var div =document.getElementById("nav1");
+			div.onclick= function(){
+				alert(this.id);   //nav1
+			}
+			
+		</script>
+
+	</body>
+
+</html>

@@ -33,18 +33,20 @@
 
 		//1，继承person实例
 
-		//child.prototype = new person();
+		child.prototype = new person();
+		child.prototype.constructor = child;
 
 
 
 		//2,继承类原型
 			//这么做有问题，减 问题部分
-
+		/*
 		child.prototype = person.prototype;
 		child.prototype.constructor= child;
 		child.prototype.sayFriends  = function(){
 			return this.friends;
 		}
+		*/
 
 		//问题部分  改变了父类的原型函数
 		/*
@@ -83,7 +85,8 @@
 		console.log(c);
 
 		alert(c.sayName());
-		alert(c.sayFriends());
+		alert(c.constructor);
+		//alert(c.sayFriends());
 
 		</script>
 

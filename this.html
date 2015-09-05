@@ -1,0 +1,96 @@
+
+
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+
+	</head>
+
+	<body>
+		<script type="text/javascript">
+
+		/*
+
+
+			this 在js环境中  指向调用时所在函数绑定的对象
+
+			1，this 和 一般函数   window
+
+			2，this 和 构造函数   类名  ###需使用new关键字 ，否则和一般函数相同
+
+			3，
+
+		*/
+
+
+
+		　//"use strict";
+
+
+			/*
+				this 和 函数
+			*/
+
+			// (function f(){
+			// 	console.log(this);   //函数中this 指向 window   strict 指向undefined 
+			// })();
+
+			//f();
+
+			
+
+			/*
+				this 和 构造函数
+			*/
+
+			// function Person(name){
+			// 	console.log(this);    //this ->Person   strict  同样是Person
+			// 	this.name = name;
+
+			// };
+			// Person.prototype.getName = function(){
+			// 	console.log(this);      //this->Person   strict  同样是Person
+			// 	return this.name;
+			// };
+
+			// var p = new Person('lzw');
+
+
+			//alert(p.getName());
+
+			//var p1 = new Person('lzw2');
+			//alert(p1.getName());
+
+			/*
+				this 和 对象
+
+			*/
+
+
+			// var obj  = {
+			// 	name :'test',
+			// 	getName: function(){
+			// 		console.log(this);   //this->Object  对象本身
+			// 		return this.name;
+			// 	}
+			// };
+
+			// obj.getName();
+
+
+			alert(this===window);
+
+			var andy = "ldh";
+			alert(andy ===window.andy);
+			alert(andy ===this.andy);
+			alert(window.andy ===this.andy);
+
+
+
+		</script>
+
+	</body>
+
+</html>

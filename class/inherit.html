@@ -1,0 +1,88 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+
+	</head>
+
+	<body>
+		<script type="text/javascript">
+		//"use strict"
+
+		function person(name,age){
+
+			this.name = name;
+			this.age = age;			
+		}
+		person.prototype.sayName = function(){
+			alert(this.name);
+		}
+
+		// //console.log(new person);
+
+		// // console.log(person.sayName());
+		//  var person1 = new person("lzw",25);
+			
+
+
+		//  console.log(person1);	
+
+
+		 function child(name,age,grade){
+		 	//person.call(this,name,age)
+		 	//this.name=name;
+		 	//this.age = age;
+		 	this.grade = grade;
+		 }
+
+		//  function f(){};
+		//  f.prototype = person.prototype;
+		//  var  a = new f();
+		//  child.prototype =a;
+
+		// child.prototype = person.prototype;
+
+		child.prototype = new person();
+
+
+
+		//  console.log(new child(1,2,3));
+
+		  var child1 = new child(1,2,3);
+
+
+		  console.log(child1);
+		  child1.sayName();
+
+		// var f={};
+		// console.log(f);
+		// f.name = "lzw";
+		// console.log(f);
+
+
+
+
+
+		// var g = function(){
+		// 	this.name ="name";
+
+		// }
+		// console.log(g);		
+		// g.name = "hjde";
+		// g.values = [];
+		// for(x in g){
+		// 	console.log(x);
+		// }
+
+			
+
+
+
+
+
+		</script>
+
+	</body>
+
+</html>
