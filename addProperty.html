@@ -1,0 +1,43 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+
+	</head>
+
+	<body>
+		<script type="text/javascript">
+
+
+		/*
+			命名空间
+		*/
+			(function(window){
+				var j =(function(){
+					var j=new Object;
+					j.a=6,
+					j.b=2,
+					j.c=3,
+					j.d=5;
+					return j;				
+				})();
+				window.abc = j;
+			})(window);
+
+			//alert(abc);
+			//console.log(a);
+			console.log(abc);
+
+
+		</script>
+
+		<div><p>abcdefg</p></div>
+		<div><p>abcdefg</p></div>
+		<div><p>abcdefg</p></div>
+
+
+
+	</body>
+
+</html>
