@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>defineProperty</title>
+</head>
+<body>
+
+	<script type="text/javascript">
+		var a= {}
+		Object.defineProperty(a,"b",{
+		  value:123,
+		  writable:true,
+		  enumerable:false,
+		  configurable:false
+		})
+		console.log(a);//123
+		a.b = 4;
+		console.log(a);
+
+		var c = {};
+		c.d = 5;
+		console.log(c);
+		
+	</script>
+
+</body>
+</html>
